@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PizzariaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="End_Rua" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="End_Num" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="End_Bairro" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="End_Complemento" Type="varchar" MaxLength="50" />
+          <Property Name="End_Refer" Type="varchar" MaxLength="50" />
+          <Property Name="DDD_1" Type="int" />
+          <Property Name="DDD_2" Type="int" />
+          <Property Name="DDD_3" Type="int" />
+          <Property Name="DDD_4" Type="int" />
+          <Property Name="Tel_1" Type="varchar" MaxLength="10" />
+          <Property Name="Tel_2" Type="varchar" MaxLength="10" />
+          <Property Name="Tel_3" Type="varchar" MaxLength="10" />
+          <Property Name="Tel_4" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Gerencia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tx_Entrega" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pagamento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Desc_Pagamento" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Ped_Prod">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Pedido" Type="int" Nullable="false" />
+          <Property Name="Id_Produto" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pedido">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Dt_Pedido" Type="datetime" Nullable="false" />
+          <Property Name="Valor_Pedido" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Observacao" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Id_Cliente" Type="int" Nullable="false" />
+          <Property Name="Id_Pagamento" Type="int" Nullable="false" />
+          <Property Name="Entrega" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Produto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cod_Produto" Type="int" Nullable="false" />
+          <Property Name="Desc_Produto" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Valor_Produto" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <Association Name="FK_Cliente_Pedido">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pedido">
+              <PropertyRef Name="Id_Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ped_Prod_Pedido">
+          <End Role="Pedido" Type="Self.Pedido" Multiplicity="1" />
+          <End Role="Ped_Prod" Type="Self.Ped_Prod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pedido">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Ped_Prod">
+              <PropertyRef Name="Id_Pedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ped_Prod_Produto">
+          <End Role="Produto" Type="Self.Produto" Multiplicity="1" />
+          <End Role="Ped_Prod" Type="Self.Ped_Prod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ped_Prod">
+              <PropertyRef Name="Id_Produto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pedido_Pagamento">
+          <End Role="Pagamento" Type="Self.Pagamento" Multiplicity="1" />
+          <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pagamento">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pedido">
+              <PropertyRef Name="Id_Pagamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PizzariaModelStoreContainer">
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gerencia" EntityType="Self.Gerencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pagamento" EntityType="Self.Pagamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ped_Prod" EntityType="Self.Ped_Prod" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pedido" EntityType="Self.Pedido" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Produto" EntityType="Self.Produto" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Cliente_Pedido" Association="Self.FK_Cliente_Pedido">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Pedido" EntitySet="Pedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ped_Prod_Pedido" Association="Self.FK_Ped_Prod_Pedido">
+            <End Role="Pedido" EntitySet="Pedido" />
+            <End Role="Ped_Prod" EntitySet="Ped_Prod" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ped_Prod_Produto" Association="Self.FK_Ped_Prod_Produto">
+            <End Role="Produto" EntitySet="Produto" />
+            <End Role="Ped_Prod" EntitySet="Ped_Prod" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pedido_Pagamento" Association="Self.FK_Pedido_Pagamento">
+            <End Role="Pagamento" EntitySet="Pagamento" />
+            <End Role="Pedido" EntitySet="Pedido" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PizzariaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ModelEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Gerencia" EntityType="PizzariaModel.Gerencia" />
+          <EntitySet Name="Pagamento" EntityType="PizzariaModel.Pagamento" />
+          <EntitySet Name="Ped_Prod" EntityType="PizzariaModel.Ped_Prod" />
+          <EntitySet Name="Pedido" EntityType="PizzariaModel.Pedido" />
+          <EntitySet Name="Produto" EntityType="PizzariaModel.Produto" />
+          <AssociationSet Name="FK_Pedido_Pagamento" Association="PizzariaModel.FK_Pedido_Pagamento">
+            <End Role="Pagamento" EntitySet="Pagamento" />
+            <End Role="Pedido" EntitySet="Pedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ped_Prod_Pedido" Association="PizzariaModel.FK_Ped_Prod_Pedido">
+            <End Role="Pedido" EntitySet="Pedido" />
+            <End Role="Ped_Prod" EntitySet="Ped_Prod" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ped_Prod_Produto" Association="PizzariaModel.FK_Ped_Prod_Produto">
+            <End Role="Produto" EntitySet="Produto" />
+            <End Role="Ped_Prod" EntitySet="Ped_Prod" />
+          </AssociationSet>
+          <EntitySet Name="Cliente" EntityType="PizzariaModel.Cliente" />
+          <AssociationSet Name="FK_Cliente_Pedido" Association="PizzariaModel.FK_Cliente_Pedido">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Pedido" EntitySet="Pedido" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Gerencia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tx_Entrega" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Pagamento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Desc_Pagamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Pedido" Relationship="PizzariaModel.FK_Pedido_Pagamento" FromRole="Pagamento" ToRole="Pedido" />
+        </EntityType>
+        <EntityType Name="Ped_Prod">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Pedido" Type="Int32" Nullable="false" />
+          <Property Name="Id_Produto" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Pedido" Relationship="PizzariaModel.FK_Ped_Prod_Pedido" FromRole="Ped_Prod" ToRole="Pedido" />
+          <NavigationProperty Name="Produto" Relationship="PizzariaModel.FK_Ped_Prod_Produto" FromRole="Ped_Prod" ToRole="Produto" />
+        </EntityType>
+        <EntityType Name="Pedido">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dt_Pedido" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Valor_Pedido" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Observacao" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Id_Cliente" Type="Int32" Nullable="false" />
+          <Property Name="Id_Pagamento" Type="Int32" Nullable="false" />
+          <Property Name="Entrega" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Pagamento" Relationship="PizzariaModel.FK_Pedido_Pagamento" FromRole="Pedido" ToRole="Pagamento" />
+          <NavigationProperty Name="Ped_Prod" Relationship="PizzariaModel.FK_Ped_Prod_Pedido" FromRole="Pedido" ToRole="Ped_Prod" />
+          <NavigationProperty Name="Cliente" Relationship="PizzariaModel.FK_Cliente_Pedido" FromRole="Pedido" ToRole="Cliente" />
+        </EntityType>
+        <EntityType Name="Produto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cod_Produto" Type="Int32" Nullable="false" />
+          <Property Name="Desc_Produto" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Valor_Produto" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="Ped_Prod" Relationship="PizzariaModel.FK_Ped_Prod_Produto" FromRole="Produto" ToRole="Ped_Prod" />
+        </EntityType>
+        <Association Name="FK_Pedido_Pagamento">
+          <End Type="PizzariaModel.Pagamento" Role="Pagamento" Multiplicity="1" />
+          <End Type="PizzariaModel.Pedido" Role="Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pagamento">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pedido">
+              <PropertyRef Name="Id_Pagamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ped_Prod_Pedido">
+          <End Type="PizzariaModel.Pedido" Role="Pedido" Multiplicity="1" />
+          <End Type="PizzariaModel.Ped_Prod" Role="Ped_Prod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pedido">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Ped_Prod">
+              <PropertyRef Name="Id_Pedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ped_Prod_Produto">
+          <End Type="PizzariaModel.Produto" Role="Produto" Multiplicity="1" />
+          <End Type="PizzariaModel.Ped_Prod" Role="Ped_Prod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ped_Prod">
+              <PropertyRef Name="Id_Produto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="End_Rua" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="End_Num" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="End_Bairro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="End_Complemento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="End_Refer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DDD_1" Type="Int32" />
+          <Property Name="DDD_2" Type="Int32" />
+          <Property Name="DDD_3" Type="Int32" />
+          <Property Name="DDD_4" Type="Int32" />
+          <Property Name="Tel_1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Tel_2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Tel_3" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Tel_4" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Pedido" Relationship="PizzariaModel.FK_Cliente_Pedido" FromRole="Cliente" ToRole="Pedido" />
+        </EntityType>
+        <Association Name="FK_Cliente_Pedido">
+          <End Type="PizzariaModel.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="PizzariaModel.Pedido" Role="Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pedido">
+              <PropertyRef Name="Id_Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PizzariaModelStoreContainer" CdmEntityContainer="ModelEntities">
+          <EntitySetMapping Name="Gerencia">
+            <EntityTypeMapping TypeName="PizzariaModel.Gerencia">
+              <MappingFragment StoreEntitySet="Gerencia">
+                <ScalarProperty Name="Tx_Entrega" ColumnName="Tx_Entrega" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pagamento">
+            <EntityTypeMapping TypeName="PizzariaModel.Pagamento">
+              <MappingFragment StoreEntitySet="Pagamento">
+                <ScalarProperty Name="Desc_Pagamento" ColumnName="Desc_Pagamento" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ped_Prod">
+            <EntityTypeMapping TypeName="PizzariaModel.Ped_Prod">
+              <MappingFragment StoreEntitySet="Ped_Prod">
+                <ScalarProperty Name="Id_Produto" ColumnName="Id_Produto" />
+                <ScalarProperty Name="Id_Pedido" ColumnName="Id_Pedido" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pedido">
+            <EntityTypeMapping TypeName="PizzariaModel.Pedido">
+              <MappingFragment StoreEntitySet="Pedido">
+                <ScalarProperty Name="Entrega" ColumnName="Entrega" />
+                <ScalarProperty Name="Id_Pagamento" ColumnName="Id_Pagamento" />
+                <ScalarProperty Name="Id_Cliente" ColumnName="Id_Cliente" />
+                <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+                <ScalarProperty Name="Valor_Pedido" ColumnName="Valor_Pedido" />
+                <ScalarProperty Name="Dt_Pedido" ColumnName="Dt_Pedido" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Produto">
+            <EntityTypeMapping TypeName="PizzariaModel.Produto">
+              <MappingFragment StoreEntitySet="Produto">
+                <ScalarProperty Name="Valor_Produto" ColumnName="Valor_Produto" />
+                <ScalarProperty Name="Desc_Produto" ColumnName="Desc_Produto" />
+                <ScalarProperty Name="Cod_Produto" ColumnName="Cod_Produto" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="PizzariaModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="Tel_4" ColumnName="Tel_4" />
+                <ScalarProperty Name="Tel_3" ColumnName="Tel_3" />
+                <ScalarProperty Name="Tel_2" ColumnName="Tel_2" />
+                <ScalarProperty Name="Tel_1" ColumnName="Tel_1" />
+                <ScalarProperty Name="DDD_4" ColumnName="DDD_4" />
+                <ScalarProperty Name="DDD_3" ColumnName="DDD_3" />
+                <ScalarProperty Name="DDD_2" ColumnName="DDD_2" />
+                <ScalarProperty Name="DDD_1" ColumnName="DDD_1" />
+                <ScalarProperty Name="End_Refer" ColumnName="End_Refer" />
+                <ScalarProperty Name="End_Complemento" ColumnName="End_Complemento" />
+                <ScalarProperty Name="End_Bairro" ColumnName="End_Bairro" />
+                <ScalarProperty Name="End_Num" ColumnName="End_Num" />
+                <ScalarProperty Name="End_Rua" ColumnName="End_Rua" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

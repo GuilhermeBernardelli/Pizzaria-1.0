@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/1009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/1009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="010bc0efdda140dfbcaee60c9fad83ce" Name="Diagram1">
+        <EntityTypeShape EntityType="PizzariaModel.Gerencia" Width="1.5" PointX="7.875" PointY="0.5" />
+        <EntityTypeShape EntityType="PizzariaModel.Pagamento" Width="1.5" PointX="3.125" PointY="4" />
+        <EntityTypeShape EntityType="PizzariaModel.Ped_Prod" Width="1.5" PointX="5.625" PointY="0.5" />
+        <EntityTypeShape EntityType="PizzariaModel.Pedido" Width="1.5" PointX="3.125" PointY="0.5" />
+        <EntityTypeShape EntityType="PizzariaModel.Produto" Width="1.5" PointX="5.625" PointY="3.375" />
+        <AssociationConnector Association="PizzariaModel.FK_Pedido_Pagamento" />
+        <AssociationConnector Association="PizzariaModel.FK_Ped_Prod_Pedido" />
+        <AssociationConnector Association="PizzariaModel.FK_Ped_Prod_Produto" />
+        <EntityTypeShape EntityType="PizzariaModel.Cliente" Width="1.5" PointX="0.75" PointY="0.5" />
+        <AssociationConnector Association="PizzariaModel.FK_Cliente_Pedido" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

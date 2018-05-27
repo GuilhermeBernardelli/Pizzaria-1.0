@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PizzariaModelStoreContainer" CdmEntityContainer="ModelEntities">
+    <EntitySetMapping Name="Gerencia">
+      <EntityTypeMapping TypeName="PizzariaModel.Gerencia">
+        <MappingFragment StoreEntitySet="Gerencia">
+          <ScalarProperty Name="Tx_Entrega" ColumnName="Tx_Entrega" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pagamento">
+      <EntityTypeMapping TypeName="PizzariaModel.Pagamento">
+        <MappingFragment StoreEntitySet="Pagamento">
+          <ScalarProperty Name="Desc_Pagamento" ColumnName="Desc_Pagamento" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ped_Prod">
+      <EntityTypeMapping TypeName="PizzariaModel.Ped_Prod">
+        <MappingFragment StoreEntitySet="Ped_Prod">
+          <ScalarProperty Name="Id_Produto" ColumnName="Id_Produto" />
+          <ScalarProperty Name="Id_Pedido" ColumnName="Id_Pedido" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pedido">
+      <EntityTypeMapping TypeName="PizzariaModel.Pedido">
+        <MappingFragment StoreEntitySet="Pedido">
+          <ScalarProperty Name="Entrega" ColumnName="Entrega" />
+          <ScalarProperty Name="Id_Pagamento" ColumnName="Id_Pagamento" />
+          <ScalarProperty Name="Id_Cliente" ColumnName="Id_Cliente" />
+          <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+          <ScalarProperty Name="Valor_Pedido" ColumnName="Valor_Pedido" />
+          <ScalarProperty Name="Dt_Pedido" ColumnName="Dt_Pedido" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Produto">
+      <EntityTypeMapping TypeName="PizzariaModel.Produto">
+        <MappingFragment StoreEntitySet="Produto">
+          <ScalarProperty Name="Valor_Produto" ColumnName="Valor_Produto" />
+          <ScalarProperty Name="Desc_Produto" ColumnName="Desc_Produto" />
+          <ScalarProperty Name="Cod_Produto" ColumnName="Cod_Produto" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="PizzariaModel.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="Tel_4" ColumnName="Tel_4" />
+          <ScalarProperty Name="Tel_3" ColumnName="Tel_3" />
+          <ScalarProperty Name="Tel_2" ColumnName="Tel_2" />
+          <ScalarProperty Name="Tel_1" ColumnName="Tel_1" />
+          <ScalarProperty Name="DDD_4" ColumnName="DDD_4" />
+          <ScalarProperty Name="DDD_3" ColumnName="DDD_3" />
+          <ScalarProperty Name="DDD_2" ColumnName="DDD_2" />
+          <ScalarProperty Name="DDD_1" ColumnName="DDD_1" />
+          <ScalarProperty Name="End_Refer" ColumnName="End_Refer" />
+          <ScalarProperty Name="End_Complemento" ColumnName="End_Complemento" />
+          <ScalarProperty Name="End_Bairro" ColumnName="End_Bairro" />
+          <ScalarProperty Name="End_Num" ColumnName="End_Num" />
+          <ScalarProperty Name="End_Rua" ColumnName="End_Rua" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
