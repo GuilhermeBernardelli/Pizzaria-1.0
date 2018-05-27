@@ -31,11 +31,12 @@ namespace Pizzaria_1._0.View
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PDV));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.pnlPDV = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSalvarCliente = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.txtUltPedido = new System.Windows.Forms.TextBox();
@@ -74,27 +75,26 @@ namespace Pizzaria_1._0.View
             this.btnPedidos = new System.Windows.Forms.Button();
             this.pnlProdutos = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dgvProdutos = new System.Windows.Forms.DataGridView();
+            this.btnLimpaProd = new System.Windows.Forms.Button();
+            this.txtValorProd = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtDescProd = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtCodProd = new System.Windows.Forms.TextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
             this.pnlPedidos = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
-            this.txtCodProd = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtDescProd = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtValorProd = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.btnLimpaProd = new System.Windows.Forms.Button();
-            this.dgvProdutos = new System.Windows.Forms.DataGridView();
-            this.label15 = new System.Windows.Forms.Label();
-            this.btnSalvarCliente = new System.Windows.Forms.Button();
             this.pnlPDV.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlProdutos.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.pnlPedidos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
+            this.pnlPedidos.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblCopyright
@@ -161,6 +161,23 @@ namespace Pizzaria_1._0.View
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 671);
             this.panel1.TabIndex = 15;
+            // 
+            // btnSalvarCliente
+            // 
+            this.btnSalvarCliente.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalvarCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalvarCliente.BackgroundImage")));
+            this.btnSalvarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalvarCliente.FlatAppearance.BorderSize = 0;
+            this.btnSalvarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvarCliente.Font = new System.Drawing.Font("Lucida Console", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvarCliente.Location = new System.Drawing.Point(358, 587);
+            this.btnSalvarCliente.Name = "btnSalvarCliente";
+            this.btnSalvarCliente.Size = new System.Drawing.Size(138, 58);
+            this.btnSalvarCliente.TabIndex = 53;
+            this.btnSalvarCliente.Text = "Salvar";
+            this.btnSalvarCliente.UseVisualStyleBackColor = false;
+            this.btnSalvarCliente.Visible = false;
+            this.btnSalvarCliente.Click += new System.EventHandler(this.btnSalvarCliente_Click);
             // 
             // btnLimpar
             // 
@@ -583,6 +600,115 @@ namespace Pizzaria_1._0.View
             this.panel3.Size = new System.Drawing.Size(1000, 673);
             this.panel3.TabIndex = 15;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(51, 189);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(272, 29);
+            this.label15.TabIndex = 28;
+            this.label15.Text = "Relação de Produtos :";
+            // 
+            // dgvProdutos
+            // 
+            this.dgvProdutos.AllowUserToAddRows = false;
+            this.dgvProdutos.AllowUserToOrderColumns = true;
+            this.dgvProdutos.AllowUserToResizeColumns = false;
+            this.dgvProdutos.AllowUserToResizeRows = false;
+            this.dgvProdutos.BackgroundColor = System.Drawing.Color.DarkGreen;
+            this.dgvProdutos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProdutos.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvProdutos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvProdutos.GridColor = System.Drawing.Color.White;
+            this.dgvProdutos.Location = new System.Drawing.Point(201, 230);
+            this.dgvProdutos.Name = "dgvProdutos";
+            this.dgvProdutos.RowHeadersVisible = false;
+            this.dgvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProdutos.Size = new System.Drawing.Size(576, 417);
+            this.dgvProdutos.TabIndex = 6;
+            this.dgvProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellContentClick);
+            this.dgvProdutos.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvProdutos_UserDeletedRow);
+            // 
+            // btnLimpaProd
+            // 
+            this.btnLimpaProd.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimpaProd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpaProd.BackgroundImage")));
+            this.btnLimpaProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimpaProd.FlatAppearance.BorderSize = 0;
+            this.btnLimpaProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpaProd.Font = new System.Drawing.Font("Lucida Console", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpaProd.Location = new System.Drawing.Point(840, 88);
+            this.btnLimpaProd.Name = "btnLimpaProd";
+            this.btnLimpaProd.Size = new System.Drawing.Size(138, 58);
+            this.btnLimpaProd.TabIndex = 5;
+            this.btnLimpaProd.Text = "Limpar";
+            this.btnLimpaProd.UseVisualStyleBackColor = false;
+            this.btnLimpaProd.Click += new System.EventHandler(this.btnLimpaProd_Click);
+            // 
+            // txtValorProd
+            // 
+            this.txtValorProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(82)))), ((int)(((byte)(0)))));
+            this.txtValorProd.Location = new System.Drawing.Point(570, 34);
+            this.txtValorProd.Name = "txtValorProd";
+            this.txtValorProd.Size = new System.Drawing.Size(230, 35);
+            this.txtValorProd.TabIndex = 2;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(474, 37);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(88, 29);
+            this.label14.TabIndex = 24;
+            this.label14.Text = "Valor :";
+            // 
+            // txtDescProd
+            // 
+            this.txtDescProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(82)))), ((int)(((byte)(0)))));
+            this.txtDescProd.Location = new System.Drawing.Point(201, 100);
+            this.txtDescProd.Name = "txtDescProd";
+            this.txtDescProd.Size = new System.Drawing.Size(599, 35);
+            this.txtDescProd.TabIndex = 3;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(51, 103);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(144, 29);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "Descrição :";
+            // 
+            // txtCodProd
+            // 
+            this.txtCodProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(82)))), ((int)(((byte)(0)))));
+            this.txtCodProd.Location = new System.Drawing.Point(201, 34);
+            this.txtCodProd.Name = "txtCodProd";
+            this.txtCodProd.Size = new System.Drawing.Size(230, 35);
+            this.txtCodProd.TabIndex = 1;
+            // 
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
@@ -594,10 +720,20 @@ namespace Pizzaria_1._0.View
             this.btnSalvar.Location = new System.Drawing.Point(840, 24);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(138, 58);
-            this.btnSalvar.TabIndex = 14;
+            this.btnSalvar.TabIndex = 4;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(83, 37);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(112, 29);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "Código :";
             // 
             // pnlPedidos
             // 
@@ -650,139 +786,6 @@ namespace Pizzaria_1._0.View
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // txtCodProd
-            // 
-            this.txtCodProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(82)))), ((int)(((byte)(0)))));
-            this.txtCodProd.Location = new System.Drawing.Point(201, 34);
-            this.txtCodProd.Name = "txtCodProd";
-            this.txtCodProd.Size = new System.Drawing.Size(230, 35);
-            this.txtCodProd.TabIndex = 21;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(83, 37);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(112, 29);
-            this.label12.TabIndex = 20;
-            this.label12.Text = "Código :";
-            // 
-            // txtDescProd
-            // 
-            this.txtDescProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(82)))), ((int)(((byte)(0)))));
-            this.txtDescProd.Location = new System.Drawing.Point(201, 100);
-            this.txtDescProd.Name = "txtDescProd";
-            this.txtDescProd.Size = new System.Drawing.Size(599, 35);
-            this.txtDescProd.TabIndex = 23;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(51, 103);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(144, 29);
-            this.label13.TabIndex = 22;
-            this.label13.Text = "Descrição :";
-            // 
-            // txtValorProd
-            // 
-            this.txtValorProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(82)))), ((int)(((byte)(0)))));
-            this.txtValorProd.Location = new System.Drawing.Point(570, 34);
-            this.txtValorProd.Name = "txtValorProd";
-            this.txtValorProd.Size = new System.Drawing.Size(230, 35);
-            this.txtValorProd.TabIndex = 25;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(474, 37);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(88, 29);
-            this.label14.TabIndex = 24;
-            this.label14.Text = "Valor :";
-            // 
-            // btnLimpaProd
-            // 
-            this.btnLimpaProd.BackColor = System.Drawing.Color.Transparent;
-            this.btnLimpaProd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpaProd.BackgroundImage")));
-            this.btnLimpaProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLimpaProd.FlatAppearance.BorderSize = 0;
-            this.btnLimpaProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpaProd.Font = new System.Drawing.Font("Lucida Console", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpaProd.Location = new System.Drawing.Point(840, 88);
-            this.btnLimpaProd.Name = "btnLimpaProd";
-            this.btnLimpaProd.Size = new System.Drawing.Size(138, 58);
-            this.btnLimpaProd.TabIndex = 26;
-            this.btnLimpaProd.Text = "Limpar";
-            this.btnLimpaProd.UseVisualStyleBackColor = false;
-            this.btnLimpaProd.Click += new System.EventHandler(this.btnLimpaProd_Click);
-            // 
-            // dgvProdutos
-            // 
-            this.dgvProdutos.AllowUserToAddRows = false;
-            this.dgvProdutos.AllowUserToDeleteRows = false;
-            this.dgvProdutos.AllowUserToOrderColumns = true;
-            this.dgvProdutos.AllowUserToResizeColumns = false;
-            this.dgvProdutos.AllowUserToResizeRows = false;
-            this.dgvProdutos.BackgroundColor = System.Drawing.Color.DarkGreen;
-            this.dgvProdutos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProdutos.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvProdutos.GridColor = System.Drawing.Color.White;
-            this.dgvProdutos.Location = new System.Drawing.Point(201, 230);
-            this.dgvProdutos.Name = "dgvProdutos";
-            this.dgvProdutos.RowHeadersVisible = false;
-            this.dgvProdutos.Size = new System.Drawing.Size(576, 417);
-            this.dgvProdutos.TabIndex = 27;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(51, 189);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(272, 29);
-            this.label15.TabIndex = 28;
-            this.label15.Text = "Relação de Produtos :";
-            // 
-            // btnSalvarCliente
-            // 
-            this.btnSalvarCliente.BackColor = System.Drawing.Color.Transparent;
-            this.btnSalvarCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalvarCliente.BackgroundImage")));
-            this.btnSalvarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSalvarCliente.FlatAppearance.BorderSize = 0;
-            this.btnSalvarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvarCliente.Font = new System.Drawing.Font("Lucida Console", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarCliente.Location = new System.Drawing.Point(358, 587);
-            this.btnSalvarCliente.Name = "btnSalvarCliente";
-            this.btnSalvarCliente.Size = new System.Drawing.Size(138, 58);
-            this.btnSalvarCliente.TabIndex = 53;
-            this.btnSalvarCliente.Text = "Salvar";
-            this.btnSalvarCliente.UseVisualStyleBackColor = false;
-            this.btnSalvarCliente.Visible = false;
-            this.btnSalvarCliente.Click += new System.EventHandler(this.btnSalvarCliente_Click);
-            // 
             // PDV
             // 
             this.AcceptButton = this.btnPedir;
@@ -812,8 +815,8 @@ namespace Pizzaria_1._0.View
             this.pnlProdutos.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.pnlPedidos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
+            this.pnlPedidos.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

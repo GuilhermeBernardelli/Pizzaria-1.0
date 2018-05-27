@@ -48,6 +48,18 @@ namespace Pizzaria_1._0.Model
                     select produtos).SingleOrDefault();
         }
 
+        internal Produto PesquisaProdutoCodigo(int codigo)
+        {
+            return (from produtos in entities.Produto
+                    where produtos.Cod_Produto == codigo
+                    select produtos).SingleOrDefault();
+        }
+
+        internal void RemoverProduto(Produto produto)
+        {
+            entities.Produto.Remove(produto);
+        }
+
         internal void SalvaNovoProduto(Produto produto)
         {
             entities.Produto.Add(produto);

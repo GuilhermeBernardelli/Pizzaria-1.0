@@ -16,3 +16,21 @@ C:\Users\BERNARDELLI\source\repos\Pizzaria 1.0\Pizzaria 1.0\obj\Debug\Pizzaria 1
 C:\Users\BERNARDELLI\source\repos\Pizzaria 1.0\Pizzaria 1.0\obj\Debug\Pizzaria 1.0.csproj.CopyComplete
 C:\Users\BERNARDELLI\source\repos\Pizzaria 1.0\Pizzaria 1.0\obj\Debug\Pizzaria 1.0.exe
 C:\Users\BERNARDELLI\source\repos\Pizzaria 1.0\Pizzaria 1.0\obj\Debug\Pizzaria 1.0.pdb
+C:\Users\BERNARDELLI\Documents\Projetos\04.Pizzaria 1.0\Pizzaria-1.0\Pizzaria 1.0\bin\Debug\Pizzaria 1.0.exe.config
+C:\Users\BERNARDELLI\Documents\Projetos\04.Pizzaria 1.0\Pizzaria-1.0\Pizzaria 1.0\bin\Debug\Pizzaria 1.0.exe
+C:\Users\BERNARDELLI\Documents\Projetos\04.Pizzaria 1.0\Pizzaria-1.0\Pizzaria 1.0\bin\Debug\Pizzaria 1.0.pdb
+C:\Users\BERNARDELLI\Documents\Projetos\04.Pizzaria 1.0\Pizzaria-1.0\Pizzaria 1.0\bin\Debug\EntityFramework.dll
+C:\Users\BERNARDELLI\Documents\Projetos\04.Pizzaria 1.0\Pizzaria-1.0\Pizzaria 1.0\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\BERNARDELLI\Documents\Projetos\04.Pizzaria 1.0\Pizzaria-1.0\Pizzaria 1.0\bin\Debug\EntityFramework.xml
+C:\Users\BERNARDELLI\Documents\Projetos\04.Pizzaria 1.0\Pizzaria-1.0\Pizzaria 1.0\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\BERNARDELLI\Documents\Projetos\04.Pizzaria 1.0\Pizzaria-1.0\Pizzaria 1.0\obj\Debug\Pizzaria 1.0.csprojResolveAssemblyReference.cache
+C:\Users\BERNARDELLI\Documents\Projetos\04.Pizzaria 1.0\Pizzaria-1.0\Pizzaria 1.0\obj\Debug\Pizzaria_1._0.Properties.Resources.resources
+C:\Users\BERNARDELLI\Documents\Projetos\04.Pizzaria 1.0\Pizzaria-1.0\Pizzaria 1.0\obj\Debug\Pizzaria_1._0.View.RealizaPedido.resources
+C:\Users\BERNARDELLI\Documents\Projetos\04.Pizzaria 1.0\Pizzaria-1.0\Pizzaria 1.0\obj\Debug\Pizzaria_1._0.View.PDV.resources
+C:\Users\BERNARDELLI\Documents\Projetos\04.Pizzaria 1.0\Pizzaria-1.0\Pizzaria 1.0\obj\Debug\Pizzaria_1._0.View.Abertura.resources
+C:\Users\BERNARDELLI\Documents\Projetos\04.Pizzaria 1.0\Pizzaria-1.0\Pizzaria 1.0\obj\Debug\Pizzaria_1._0.View.Login.resources
+C:\Users\BERNARDELLI\Documents\Projetos\04.Pizzaria 1.0\Pizzaria-1.0\Pizzaria 1.0\obj\Debug\Pizzaria 1.0.csproj.GenerateResource.cache
+C:\Users\BERNARDELLI\Documents\Projetos\04.Pizzaria 1.0\Pizzaria-1.0\Pizzaria 1.0\obj\Debug\Pizzaria 1.0.csproj.CoreCompileInputs.cache
+C:\Users\BERNARDELLI\Documents\Projetos\04.Pizzaria 1.0\Pizzaria-1.0\Pizzaria 1.0\obj\Debug\Pizzaria 1.0.csproj.CopyComplete
+C:\Users\BERNARDELLI\Documents\Projetos\04.Pizzaria 1.0\Pizzaria-1.0\Pizzaria 1.0\obj\Debug\Pizzaria 1.0.exe
+C:\Users\BERNARDELLI\Documents\Projetos\04.Pizzaria 1.0\Pizzaria-1.0\Pizzaria 1.0\obj\Debug\Pizzaria 1.0.pdb

@@ -12,9 +12,13 @@ namespace Pizzaria_1._0.View
     {
         Controle controle = new Controle();
         static Cliente cliente = new Cliente();
-        List<Produto> listaProdutos = new List<Produto>();
+        List<Produto> listaProdutos = new List<Produto>();       
         Produto produto = new Produto();
+        bool alteracao = false;
+        int codigoProduto;
         static bool cadastrado;
+
+        #region Gererica
 
         public PDV()
         {
@@ -47,6 +51,8 @@ namespace Pizzaria_1._0.View
             pnlProdutos.Visible = false;
             pnlPedidos.Visible = false;
             Desabilita_Campos();
+            AcceptButton = btnSalvar;
+            CancelButton = btnLimpar;
         }
 
         private void btnProdutos_Click(object sender, EventArgs e)
@@ -55,6 +61,8 @@ namespace Pizzaria_1._0.View
             pnlProdutos.Visible = true;
             pnlPedidos.Visible = false;
             Pesquisa_Produtos();
+            AcceptButton = btnProdutos;
+            CancelButton = btnLimpaProd;
         }
 
         private void btnPedidos_Click(object sender, EventArgs e)
@@ -63,6 +71,8 @@ namespace Pizzaria_1._0.View
             pnlProdutos.Visible = false;
             pnlPedidos.Visible = true;
         }
+
+        #endregion
 
         #region PDV
 
@@ -432,22 +442,31 @@ namespace Pizzaria_1._0.View
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if(txtCodProd.Text.Equals("") || txtDescProd.Text.Equals("") || txtValorProd.Text.Equals(""))
+            if (txtCodProd.Text.Equals("") || txtDescProd.Text.Equals("") || txtValorProd.Text.Equals(""))
             {
                 MessageBox.Show("Todos os campos são de preenchimento obrigatório.");
             }
             else
             {
-                produto = new Produto();
-                controle.SalvaProduto(produto);
-                produto.Cod_Produto = Convert.ToInt32(txtCodProd.Text);
-                produto.Desc_Produto = txtDescProd.Text;
-                produto.Valor_Produto = Convert.ToDecimal(txtValorProd.Text);
+                if (!alteracao)
+                {
+                    produto = new Produto();
+                    controle.SalvaProduto(produto);
+                    produto.Cod_Produto = Convert.ToInt32(txtCodProd.Text);
+                    produto.Desc_Produto = txtDescProd.Text;
+                    produto.Valor_Produto = Convert.ToDecimal(txtValorProd.Text);
+                }
+                else
+                {
+                    produto.Cod_Produto = Convert.ToInt32(txtCodProd.Text);
+                    produto.Desc_Produto = txtDescProd.Text;
+                    produto.Valor_Produto = Convert.ToDecimal(txtValorProd.Text);
+                }
                 controle.SalvaAlteracao();
-                
                 btnLimpaProd.PerformClick();
             }
         }
+        
 
         private void btnLimpaProd_Click(object sender, EventArgs e)
         {
@@ -455,8 +474,29 @@ namespace Pizzaria_1._0.View
             txtCodProd.Text = "";
             txtDescProd.Text = "";
             txtValorProd.Text = "";
+            alteracao = false;
+        }       
+
+        private void dgvProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            alteracao = true;
+            codigoProduto = Convert.ToInt32(dgvProdutos.SelectedCells[0].Value);
+            produto = controle.PesquisaProdutoByCodigo(codigoProduto);
+            txtCodProd.Text = produto.Cod_Produto.ToString();
+            txtDescProd.Text = produto.Desc_Produto;
+            txtValorProd.Text = produto.Valor_Produto.ToString();
+        }
+
+        private void dgvProdutos_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            alteracao = false;
+            produto = controle.PesquisaProdutoByCodigo(codigoProduto);
+            controle.RemoveProduto(produto);
+            controle.SalvaAlteracao();
+            Pesquisa_Produtos();
         }
 
         #endregion
+
     }
 }
