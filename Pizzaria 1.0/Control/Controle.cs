@@ -49,5 +49,17 @@ namespace Pizzaria_1._0.Control
 
             return entitie.PesquisaProdutoId(id);
         }
+
+        internal Produto PesquisaProdutoByCodigo(int codigoProduto)
+        {
+            int codigo = codigoProduto;
+
+            return entitie.PesquisaProdutoCodigo(codigo);
+        }
+
+        internal void RemoveProduto(Produto produto)
+        {
+            entitie.RemoverProduto(produto);
+        }
     }
 }
