@@ -35,7 +35,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSelecionar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.txtVlPedidoAberto = new System.Windows.Forms.Label();
             this.pnlPagamento = new System.Windows.Forms.GroupBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -48,9 +48,6 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.lblLabel = new System.Windows.Forms.Label();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
-            this.Selecionado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.pnlPagamento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
@@ -59,7 +56,7 @@
             // lblCopyright
             // 
             this.lblCopyright.AutoSize = true;
-            this.lblCopyright.Location = new System.Drawing.Point(3, 582);
+            this.lblCopyright.Location = new System.Drawing.Point(2, 585);
             this.lblCopyright.Name = "lblCopyright";
             this.lblCopyright.Size = new System.Drawing.Size(154, 13);
             this.lblCopyright.TabIndex = 1;
@@ -71,21 +68,20 @@
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.Controls.Add(this.btnSelecionar);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.txtVlPedidoAberto);
             this.panel1.Controls.Add(this.pnlPagamento);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtTel4);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cmbItens);
             this.panel1.Controls.Add(this.btnCancela);
-            this.panel1.Controls.Add(this.lblCopyright);
             this.panel1.Controls.Add(this.btnOK);
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.lblLabel);
             this.panel1.Controls.Add(this.dgvPedido);
             this.panel1.Location = new System.Drawing.Point(0, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(599, 599);
+            this.panel1.Size = new System.Drawing.Size(599, 580);
             this.panel1.TabIndex = 2;
             // 
             // btnSelecionar
@@ -108,23 +104,23 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(285, 476);
+            this.label4.Location = new System.Drawing.Point(285, 471);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 25);
+            this.label4.Size = new System.Drawing.Size(147, 25);
             this.label4.TabIndex = 62;
-            this.label4.Text = "TOTAL :";
+            this.label4.Text = "TOTAL :    R$";
             // 
-            // label3
+            // txtVlPedidoAberto
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.DarkGreen;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(388, 464);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 41);
-            this.label3.TabIndex = 61;
-            this.label3.Text = "R$ 0,00";
+            this.txtVlPedidoAberto.AutoSize = true;
+            this.txtVlPedidoAberto.BackColor = System.Drawing.Color.DarkGreen;
+            this.txtVlPedidoAberto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txtVlPedidoAberto.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVlPedidoAberto.Location = new System.Drawing.Point(438, 463);
+            this.txtVlPedidoAberto.Name = "txtVlPedidoAberto";
+            this.txtVlPedidoAberto.Size = new System.Drawing.Size(86, 41);
+            this.txtVlPedidoAberto.TabIndex = 61;
+            this.txtVlPedidoAberto.Text = "0,00";
             // 
             // pnlPagamento
             // 
@@ -176,7 +172,6 @@
             // 
             // txtTel4
             // 
-            this.txtTel4.Enabled = false;
             this.txtTel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(82)))), ((int)(((byte)(0)))));
             this.txtTel4.Location = new System.Drawing.Point(137, 414);
@@ -211,7 +206,7 @@
             this.btnCancela.FlatAppearance.BorderSize = 0;
             this.btnCancela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancela.Font = new System.Drawing.Font("Lucida Console", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancela.Location = new System.Drawing.Point(303, 523);
+            this.btnCancela.Location = new System.Drawing.Point(303, 519);
             this.btnCancela.Name = "btnCancela";
             this.btnCancela.Size = new System.Drawing.Size(138, 58);
             this.btnCancela.TabIndex = 53;
@@ -227,7 +222,7 @@
             this.btnOK.FlatAppearance.BorderSize = 0;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Lucida Console", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(159, 523);
+            this.btnOK.Location = new System.Drawing.Point(159, 519);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(138, 58);
             this.btnOK.TabIndex = 52;
@@ -275,44 +270,24 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvPedido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Selecionado,
-            this.Descrição,
-            this.Valor});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPedido.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPedido.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvPedido.GridColor = System.Drawing.Color.White;
             this.dgvPedido.Location = new System.Drawing.Point(12, 55);
             this.dgvPedido.Name = "dgvPedido";
             this.dgvPedido.RowHeadersVisible = false;
+            this.dgvPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPedido.Size = new System.Drawing.Size(576, 276);
             this.dgvPedido.TabIndex = 0;
-            // 
-            // Selecionado
-            // 
-            this.Selecionado.HeaderText = "Selecionado";
-            this.Selecionado.Name = "Selecionado";
-            // 
-            // Descrição
-            // 
-            this.Descrição.HeaderText = "Descrição";
-            this.Descrição.Name = "Descrição";
-            this.Descrição.ReadOnly = true;
-            this.Descrição.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Descrição.Width = 372;
-            // 
-            // Valor
-            // 
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
-            this.Valor.ReadOnly = true;
-            this.Valor.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedido_CellContentClick);
+            this.dgvPedido.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvPedido_UserDeletedRow);
             // 
             // RealizaPedido
             // 
@@ -322,6 +297,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(600, 600);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblCopyright);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -329,13 +305,13 @@
             this.Name = "RealizaPedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Abertura";
-            this.TopMost = true;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnlPagamento.ResumeLayout(false);
             this.pnlPagamento.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -345,7 +321,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label lblLabel;
-        private System.Windows.Forms.DataGridView dgvPedido;
         private System.Windows.Forms.ComboBox cmbItens;
         private System.Windows.Forms.Button btnCancela;
         private System.Windows.Forms.Button btnOK;
@@ -355,11 +330,9 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTel4;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Selecionado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descrição;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label txtVlPedidoAberto;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSelecionar;
+        private System.Windows.Forms.DataGridView dgvPedido;
     }
 }

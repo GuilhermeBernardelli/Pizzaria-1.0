@@ -24,6 +24,8 @@ namespace Pizzaria_1._0.View
         {
             InitializeComponent();
 
+            btnPDV.PerformClick();
+
             this.txtMaisPedida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.txtUltPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
 
@@ -47,22 +49,24 @@ namespace Pizzaria_1._0.View
 
         private void btnPDV_Click(object sender, EventArgs e)
         {
+            AcceptButton = btnPedir;
+            CancelButton = btnLimpar;
+            txtBusca.Focus();
             pnlPDV.Visible = true;
             pnlProdutos.Visible = false;
             pnlPedidos.Visible = false;
-            Desabilita_Campos();
-            AcceptButton = btnSalvar;
-            CancelButton = btnLimpar;
+            Desabilita_Campos();            
         }
 
         private void btnProdutos_Click(object sender, EventArgs e)
         {
+            AcceptButton = btnProdutos;
+            CancelButton = btnLimpaProd;
+            txtCodProd.Focus();
             pnlPDV.Visible = false;
             pnlProdutos.Visible = true;
             pnlPedidos.Visible = false;
-            Pesquisa_Produtos();
-            AcceptButton = btnProdutos;
-            CancelButton = btnLimpaProd;
+            Pesquisa_Produtos();            
         }
 
         private void btnPedidos_Click(object sender, EventArgs e)
