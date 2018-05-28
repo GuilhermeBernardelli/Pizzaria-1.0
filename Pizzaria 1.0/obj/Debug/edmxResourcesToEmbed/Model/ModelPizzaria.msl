@@ -20,6 +20,7 @@
     <EntitySetMapping Name="Ped_Prod">
       <EntityTypeMapping TypeName="PizzariaModel.Ped_Prod">
         <MappingFragment StoreEntitySet="Ped_Prod">
+          <ScalarProperty Name="ProdInteiro" ColumnName="ProdInteiro" />
           <ScalarProperty Name="Id_Produto" ColumnName="Id_Produto" />
           <ScalarProperty Name="Id_Pedido" ColumnName="Id_Pedido" />
           <ScalarProperty Name="Id" ColumnName="Id" />

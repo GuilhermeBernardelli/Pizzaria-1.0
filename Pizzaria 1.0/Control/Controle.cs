@@ -61,5 +61,43 @@ namespace Pizzaria_1._0.Control
         {
             entitie.RemoverProduto(produto);
         }
+
+        internal void SalvaPedidoProduto(Ped_Prod pedidoProduto)
+        {
+            entitie.SalvaNovoPedidoProduto(pedidoProduto);
+        }
+
+        internal string pesquisaMaisPedida(int id_cliente)
+        {
+            int id = id_cliente;
+
+            return entitie.PesquisaProdutoMaisPedido(id);
+        }
+
+        internal string pesquisaUltPedido(int id_cliente)
+        {
+            int id = id_cliente;
+
+            return entitie.PesquisaProdutosUltimoPedido(id);
+        }
+
+        internal List<Pedido> PesquisaPedidosData(DateTime data)
+        {
+            return entitie.PesquisaPedidosByDate(data);
+        }
+
+        internal List<Ped_Prod> PesquisaProdutosByPedido(int id)
+        {
+            int id_pedido = id;
+
+            return entitie.PesquisaProdutosPedidos(id_pedido);
+        }
+
+        internal List<Pedido> PesquisaPedidosCliente(int id)
+        {
+            int id_cliente = id;
+
+            return entitie.PesquisaPedidosByClienteId(id_cliente);
+        }
     }
 }

@@ -46,6 +46,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Id_Pedido" Type="int" Nullable="false" />
           <Property Name="Id_Produto" Type="int" Nullable="false" />
+          <Property Name="ProdInteiro" Type="bit" />
         </EntityType>
         <EntityType Name="Pedido">
           <Key>
@@ -192,6 +193,7 @@
           <Property Name="Id_Produto" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Pedido" Relationship="PizzariaModel.FK_Ped_Prod_Pedido" FromRole="Ped_Prod" ToRole="Pedido" />
           <NavigationProperty Name="Produto" Relationship="PizzariaModel.FK_Ped_Prod_Produto" FromRole="Ped_Prod" ToRole="Produto" />
+          <Property Name="ProdInteiro" Type="Boolean" />
         </EntityType>
         <EntityType Name="Pedido">
           <Key>
@@ -312,6 +314,7 @@
           <EntitySetMapping Name="Ped_Prod">
             <EntityTypeMapping TypeName="PizzariaModel.Ped_Prod">
               <MappingFragment StoreEntitySet="Ped_Prod">
+                <ScalarProperty Name="ProdInteiro" ColumnName="ProdInteiro" />
                 <ScalarProperty Name="Id_Produto" ColumnName="Id_Produto" />
                 <ScalarProperty Name="Id_Pedido" ColumnName="Id_Pedido" />
                 <ScalarProperty Name="Id" ColumnName="Id" />

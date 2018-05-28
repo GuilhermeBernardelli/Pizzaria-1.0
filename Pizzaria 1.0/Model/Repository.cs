@@ -55,6 +55,81 @@ namespace Pizzaria_1._0.Model
                     select produtos).SingleOrDefault();
         }
 
+        internal void SalvaNovoPedidoProduto(Ped_Prod pedidoProduto)
+        {
+            entities.Ped_Prod.Add(pedidoProduto);
+        }
+
+        internal string PesquisaProdutoMaisPedido(int id_cliente)
+        {
+            var relProd = (from produto in entities.Ped_Prod
+                        where produto.Pedido.Id_Cliente == id_cliente
+                        group produto by produto.Id_Produto into grp
+                        select new { key = grp.Key, cnt = grp.Count()});
+
+            var maisPed = relProd.First();
+
+            foreach (var prod in relProd)
+            {
+                if (prod.cnt > maisPed.cnt)
+                {
+                    maisPed = prod;
+                }
+            }
+
+            return PesquisaProdutoId(Convert.ToInt32(maisPed.key)).Desc_Produto;
+        }
+
+        internal List<Pedido> PesquisaPedidosByClienteId(int id_cliente)
+        {
+            return (from pedido in entities.Pedido
+                    where pedido.Id_Cliente == id_cliente
+                    select pedido).ToList();
+        }
+
+        internal List<Ped_Prod> PesquisaProdutosPedidos(int id_pedido)
+        {
+            return (from pedido in entities.Ped_Prod
+                    where pedido.Id_Pedido == id_pedido
+                    select pedido).ToList();
+        }
+
+        internal List<Pedido> PesquisaPedidosByDate(DateTime data)
+        {
+            return (from pedido in entities.Pedido
+                    where pedido.Dt_Pedido == data
+                    orderby pedido.Dt_Pedido
+                    select pedido).ToList();
+        }
+
+        internal string PesquisaProdutosUltimoPedido(int id)
+        {
+            List<Pedido> pedido = (from ped in entities.Pedido
+                             where ped.Id_Cliente == id
+                             orderby ped.Dt_Pedido
+                             select ped).ToList();
+
+            int idPedido = pedido[pedido.Count - 1].id;
+
+            List<Ped_Prod> listaProd = (from pedProd in entities.Ped_Prod
+                                        where pedProd.Id_Pedido == idPedido
+                                        select pedProd).ToList();
+
+            string textoPedido = "";
+
+            foreach (Ped_Prod value in listaProd)
+            {
+                string meia = "";
+                if (Convert.ToInt32(value.ProdInteiro) == 0)
+                {
+                    meia = "1/2";
+                }
+                textoPedido = textoPedido + value.Produto.Desc_Produto + meia + "\n";
+            }
+
+            return textoPedido;
+        }
+
         internal void RemoverProduto(Produto produto)
         {
             entities.Produto.Remove(produto);

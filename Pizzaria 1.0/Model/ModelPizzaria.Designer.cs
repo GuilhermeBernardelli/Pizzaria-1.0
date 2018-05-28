@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\BERNARDELLI\source\repos\Pizzaria 1.0\Pizzaria 1.0\Model\ModelPizzaria.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\BERNARDELLI\Documents\Projetos\04.Pizzaria 1.0\Pizzaria-1.0\Pizzaria 1.0\Model\ModelPizzaria.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

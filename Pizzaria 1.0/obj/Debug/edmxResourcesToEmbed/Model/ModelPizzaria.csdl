@@ -48,6 +48,7 @@
     <Property Name="Id_Produto" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Pedido" Relationship="PizzariaModel.FK_Ped_Prod_Pedido" FromRole="Ped_Prod" ToRole="Pedido" />
     <NavigationProperty Name="Produto" Relationship="PizzariaModel.FK_Ped_Prod_Produto" FromRole="Ped_Prod" ToRole="Produto" />
+    <Property Name="ProdInteiro" Type="Boolean" />
   </EntityType>
   <EntityType Name="Pedido">
     <Key>

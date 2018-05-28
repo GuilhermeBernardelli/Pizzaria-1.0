@@ -32,6 +32,7 @@ namespace Pizzaria_1._0.View
             Desabilita_Campos();
         }
 
+        /*
         public PDV(Cliente cliente, Pedido pedido)
         {
             InitializeComponent();
@@ -41,6 +42,7 @@ namespace Pizzaria_1._0.View
 
             Habilita_Campos();
         }
+        */
 
         private void btnSair_Click(object sender, EventArgs e)
         {
@@ -74,6 +76,8 @@ namespace Pizzaria_1._0.View
             pnlPDV.Visible = false;
             pnlProdutos.Visible = false;
             pnlPedidos.Visible = true;
+
+            Exibe_Pedidos(DateTime.Today);
         }
 
         #endregion
@@ -121,7 +125,12 @@ namespace Pizzaria_1._0.View
                 txtDDD3.Text = cliente.DDD_3.ToString();
                 txtTel3.Text = cliente.Tel_3;
                 txtDDD4.Text = cliente.DDD_4.ToString();
-                txtTel4.Text = cliente.Tel_4;                
+                txtTel4.Text = cliente.Tel_4;
+                if (controle.PesquisaPedidosCliente(cliente.Id).Count() > 0)
+                {
+                    txtMaisPedida.Text = controle.pesquisaMaisPedida(cliente.Id);
+                    txtUltPedido.Text = controle.pesquisaUltPedido(cliente.Id);
+                }
             }
             else
             {
@@ -277,6 +286,8 @@ namespace Pizzaria_1._0.View
             txtTel2.Text = "";
             txtTel3.Text = "";
             txtTel4.Text = "";
+            txtUltPedido.Text = "";
+            txtMaisPedida.Text = "";
             btnPedir.Visible = true;
             btnSalvarCliente.Visible = false;
             btnAlterar.Visible = false;
@@ -502,5 +513,52 @@ namespace Pizzaria_1._0.View
 
         #endregion
 
+        #region Pedidos
+
+        public void Exibe_Pedidos(DateTime data)
+        {
+            lblPeriodoPedido.Text = "Pedidos do dia " + data.ToShortDateString();
+
+            List<Pedido> listaPedidos = controle.PesquisaPedidosData(data);
+
+            txtPedidoDia.Text = "";
+
+            foreach (Pedido value in listaPedidos)
+            {
+                bool primeiro = true;
+
+                List<Ped_Prod> prodPedidos = controle.PesquisaProdutosByPedido(value.id);
+
+                foreach (Ped_Prod prod in prodPedidos)
+                {
+                    string meia = "";
+                    if (Convert.ToInt32(prod.ProdInteiro) == 0)
+                    {
+                        meia = " 1/2";
+                    }
+                    Produto produto = controle.PesquisaProdutoByID(prod.Id_Produto);
+                    if (primeiro)
+                    {
+                        primeiro = false;
+                        txtPedidoDia.Text = string.Format(txtPedidoDia.Text + "=> " + value.Cliente.End_Rua + "," + value.Cliente.End_Num + "    " + value.Observacao + "{0}\t" + prod.Produto.Desc_Produto + meia + " - " + prod.Produto.Valor_Produto, Environment.NewLine);
+                    }
+                    else
+                    {
+                        txtPedidoDia.Text = string.Format(txtPedidoDia.Text + " {0}\t" + prod.Produto.Desc_Produto + meia + " - " + prod.Produto.Valor_Produto, Environment.NewLine);
+                    }
+                }
+                if (!primeiro)
+                {
+                    txtPedidoDia.Text = string.Format(txtPedidoDia.Text + "{0}{0}", Environment.NewLine);
+                }
+            }
+        }
+
+        #endregion
+
+        private void Calendario_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            Exibe_Pedidos(e.Start);
+        }
     }
 }

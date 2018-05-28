@@ -17,6 +17,7 @@ namespace Pizzaria_1._0.Model
         public int Id { get; set; }
         public int Id_Pedido { get; set; }
         public int Id_Produto { get; set; }
+        public Nullable<bool> ProdInteiro { get; set; }
     
         public virtual Pedido Pedido { get; set; }
         public virtual Produto Produto { get; set; }

@@ -37,10 +37,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtVlPedidoAberto = new System.Windows.Forms.Label();
             this.pnlPagamento = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rdbDinheiro = new System.Windows.Forms.RadioButton();
+            this.rdbCartao = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtTel4 = new System.Windows.Forms.TextBox();
+            this.txtObservacao = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbItens = new System.Windows.Forms.ComboBox();
             this.btnCancela = new System.Windows.Forms.Button();
@@ -48,6 +48,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.lblLabel = new System.Windows.Forms.Label();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
+            this.chkMeia = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.pnlPagamento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
@@ -66,12 +67,13 @@
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Controls.Add(this.chkMeia);
             this.panel1.Controls.Add(this.btnSelecionar);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtVlPedidoAberto);
             this.panel1.Controls.Add(this.pnlPagamento);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtTel4);
+            this.panel1.Controls.Add(this.txtObservacao);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cmbItens);
             this.panel1.Controls.Add(this.btnCancela);
@@ -92,7 +94,7 @@
             this.btnSelecionar.FlatAppearance.BorderSize = 0;
             this.btnSelecionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelecionar.ForeColor = System.Drawing.Color.White;
-            this.btnSelecionar.Location = new System.Drawing.Point(552, 365);
+            this.btnSelecionar.Location = new System.Drawing.Point(555, 365);
             this.btnSelecionar.Margin = new System.Windows.Forms.Padding(0);
             this.btnSelecionar.Name = "btnSelecionar";
             this.btnSelecionar.Size = new System.Drawing.Size(33, 33);
@@ -124,8 +126,8 @@
             // 
             // pnlPagamento
             // 
-            this.pnlPagamento.Controls.Add(this.radioButton1);
-            this.pnlPagamento.Controls.Add(this.radioButton2);
+            this.pnlPagamento.Controls.Add(this.rdbDinheiro);
+            this.pnlPagamento.Controls.Add(this.rdbCartao);
             this.pnlPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlPagamento.ForeColor = System.Drawing.Color.White;
             this.pnlPagamento.Location = new System.Drawing.Point(12, 453);
@@ -136,29 +138,29 @@
             this.pnlPagamento.TabStop = false;
             this.pnlPagamento.Text = "Forma de Pagamento";
             // 
-            // radioButton1
+            // rdbDinheiro
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(22, 23);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(87, 21);
-            this.radioButton1.TabIndex = 58;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Dinheiro";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdbDinheiro.AutoSize = true;
+            this.rdbDinheiro.Checked = true;
+            this.rdbDinheiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbDinheiro.Location = new System.Drawing.Point(22, 23);
+            this.rdbDinheiro.Name = "rdbDinheiro";
+            this.rdbDinheiro.Size = new System.Drawing.Size(87, 21);
+            this.rdbDinheiro.TabIndex = 58;
+            this.rdbDinheiro.TabStop = true;
+            this.rdbDinheiro.Text = "Dinheiro";
+            this.rdbDinheiro.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rdbCartao
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(150, 23);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(74, 21);
-            this.radioButton2.TabIndex = 59;
-            this.radioButton2.Text = "Cartão";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdbCartao.AutoSize = true;
+            this.rdbCartao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbCartao.Location = new System.Drawing.Point(150, 23);
+            this.rdbCartao.Name = "rdbCartao";
+            this.rdbCartao.Size = new System.Drawing.Size(74, 21);
+            this.rdbCartao.TabIndex = 59;
+            this.rdbCartao.Text = "Cartão";
+            this.rdbCartao.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -170,14 +172,14 @@
             this.label2.TabIndex = 57;
             this.label2.Text = "Observações :";
             // 
-            // txtTel4
+            // txtObservacao
             // 
-            this.txtTel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(82)))), ((int)(((byte)(0)))));
-            this.txtTel4.Location = new System.Drawing.Point(137, 414);
-            this.txtTel4.Name = "txtTel4";
-            this.txtTel4.Size = new System.Drawing.Size(451, 30);
-            this.txtTel4.TabIndex = 56;
+            this.txtObservacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObservacao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(82)))), ((int)(((byte)(0)))));
+            this.txtObservacao.Location = new System.Drawing.Point(137, 414);
+            this.txtObservacao.Name = "txtObservacao";
+            this.txtObservacao.Size = new System.Drawing.Size(451, 30);
+            this.txtObservacao.TabIndex = 56;
             // 
             // label1
             // 
@@ -195,7 +197,7 @@
             this.cmbItens.FormattingEnabled = true;
             this.cmbItens.Location = new System.Drawing.Point(12, 365);
             this.cmbItens.Name = "cmbItens";
-            this.cmbItens.Size = new System.Drawing.Size(537, 33);
+            this.cmbItens.Size = new System.Drawing.Size(472, 33);
             this.cmbItens.TabIndex = 54;
             // 
             // btnCancela
@@ -289,6 +291,17 @@
             this.dgvPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedido_CellContentClick);
             this.dgvPedido.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvPedido_UserDeletedRow);
             // 
+            // chkMeia
+            // 
+            this.chkMeia.AutoSize = true;
+            this.chkMeia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.chkMeia.Location = new System.Drawing.Point(490, 369);
+            this.chkMeia.Name = "chkMeia";
+            this.chkMeia.Size = new System.Drawing.Size(62, 29);
+            this.chkMeia.TabIndex = 64;
+            this.chkMeia.Text = "1/2";
+            this.chkMeia.UseVisualStyleBackColor = true;
+            // 
             // RealizaPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -326,13 +339,14 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox pnlPagamento;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rdbDinheiro;
+        private System.Windows.Forms.RadioButton rdbCartao;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTel4;
+        private System.Windows.Forms.TextBox txtObservacao;
         private System.Windows.Forms.Label txtVlPedidoAberto;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSelecionar;
         private System.Windows.Forms.DataGridView dgvPedido;
+        private System.Windows.Forms.CheckBox chkMeia;
     }
 }
