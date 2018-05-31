@@ -32,18 +32,6 @@ namespace Pizzaria_1._0.View
             Desabilita_Campos();
         }
 
-        /*
-        public PDV(Cliente cliente, Pedido pedido)
-        {
-            InitializeComponent();
-
-            this.txtMaisPedida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.txtUltPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-
-            Habilita_Campos();
-        }
-        */
-
         private void btnSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -78,6 +66,11 @@ namespace Pizzaria_1._0.View
             pnlPedidos.Visible = true;
 
             Exibe_Pedidos(DateTime.Today);
+        }
+
+        private void btnGerencia_Click(object sender, EventArgs e)
+        {
+
         }
 
         #endregion
@@ -554,11 +547,13 @@ namespace Pizzaria_1._0.View
             }
         }
 
-        #endregion
-
         private void Calendario_DateSelected(object sender, DateRangeEventArgs e)
         {
             Exibe_Pedidos(e.Start);
         }
+
+
+        #endregion
+        
     }
 }

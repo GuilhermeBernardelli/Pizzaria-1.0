@@ -124,7 +124,7 @@ namespace Pizzaria_1._0.Model
                 {
                     meia = "1/2";
                 }
-                textoPedido = textoPedido + value.Produto.Desc_Produto + meia + "\n";
+                textoPedido = string.Format(textoPedido + value.Produto.Desc_Produto + meia + "{0}", Environment.NewLine);
             }
 
             return textoPedido;

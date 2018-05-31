@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using System.Drawing;
+using System.Drawing.Printing;
 
 namespace Pizzaria_1._0.View
 {
@@ -11,7 +13,7 @@ namespace Pizzaria_1._0.View
     {
         static Cliente clientePed;
         PDV form = new PDV();
-        Pedido pedido = new Pedido();
+        static Pedido pedido = new Pedido();
         Controle controle = new Controle();
         static Produto produto = new Produto();
         List<Produto> listaProdutos = new List<Produto>();
@@ -20,7 +22,9 @@ namespace Pizzaria_1._0.View
         static decimal vlAux;
         static decimal vlAux1;
         static decimal valor;
+        string pedidoTexto;
         List<int> listaPosicao = new List<int>();
+        string impressoraNome = "HP Deskjet 3510 series (Rede)";
 
         public RealizaPedido(PDV pdv, Cliente cliente)
         {
@@ -61,6 +65,8 @@ namespace Pizzaria_1._0.View
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            pedidoTexto = "";
+
             pedido = new Pedido();
             controle.SalvaPedido(pedido);
             pedido.Id_Cliente = clientePed.Id;
@@ -72,13 +78,26 @@ namespace Pizzaria_1._0.View
             else
             {
                 pg = 2;
-            }
+            }            
             pedido.Id_Pagamento = pg;
             pedido.Observacao = txtObservacao.Text;
             pedido.Dt_Pedido = DateTime.Today;
             pedido.Valor_Pedido = Convert.ToDecimal(txtVlPedidoAberto.Text);
 
             controle.SalvaAlteracao();
+
+            string pagamento = "";
+            if (pg == 1)
+            {
+                pagamento = "Dinheiro";
+            }
+            else
+            {
+                pagamento = "Cartão";
+            }
+
+            pedidoTexto = string.Format(clientePed.Nome + "{0}", Environment.NewLine);
+            pedidoTexto = pedidoTexto + clientePed.End_Rua + "," + clientePed.End_Num + " " + clientePed.End_Complemento;
 
             foreach (DataGridViewRow linha in dgvPedido.Rows)
             {
@@ -88,17 +107,43 @@ namespace Pizzaria_1._0.View
                 {
                     inteiro = false;
                 }
-                
+
                 Ped_Prod pedidoProduto = new Ped_Prod();
                 controle.SalvaPedidoProduto(pedidoProduto);
                 pedidoProduto.Id_Pedido = pedido.id;
                 pedidoProduto.Id_Produto = controle.PesquisaProdutoByCodigo(Convert.ToInt32(linha.Cells[0].Value)).Id;
-                pedidoProduto.ProdInteiro = inteiro; 
+                pedidoProduto.ProdInteiro = inteiro;
                 controle.SalvaAlteracao();
+
+                string meia = "";
+                if (Convert.ToInt32(pedidoProduto.ProdInteiro) == 0)
+                {
+                    meia = " 1/2";
+                }
+                
+                Produto produto = controle.PesquisaProdutoByID(pedidoProduto.Id_Produto);
+
+                pedidoTexto = string.Format(pedidoTexto + "{0}     -" + pedidoProduto.Produto.Desc_Produto + meia + " - " + pedidoProduto.Produto.Valor_Produto, Environment.NewLine);
+
             }
 
+            string entrega = "";
 
-            PDV fecha = new PDV(/*clientePed, pedido*/);
+            if (chkEntrega.Checked)
+            {
+                entrega = "entregar";
+            }
+            else
+            {
+                entrega = "balcão";
+            }
+
+            pedidoTexto = string.Format(pedidoTexto + "{0}" + pagamento + " - " + txtObservacao.Text + " - " + entrega, Environment.NewLine);
+            pedidoTexto = string.Format(pedidoTexto + "{0}{0}" + "R$" + pedido.Valor_Pedido.ToString("0.00") + " - " + pedido.Dt_Pedido.ToShortDateString() , Environment.NewLine);
+
+            imprimirPedido();
+
+            PDV fecha = new PDV();
             fecha.Show();
             
             form.Dispose();
@@ -205,5 +250,50 @@ namespace Pizzaria_1._0.View
 
             Adicionar_Pedido(produtosPedidos);
         }
+        #region Impressão
+
+
+        private void imprimirPedido()
+        {
+            using (var printDocument = new PrintDocument())
+            {
+                printDocument.PrintPage += printDocument_PrintPage;
+                //printDocument.PrinterSettings.PrinterName = PrinterSettings.InstalledPrinters.ToString();
+                printDocument.PrinterSettings.PrinterName = impressoraNome;
+                printDocument.Print();
+            }
+        }
+
+        void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            var printDocument = sender as System.Drawing.Printing.PrintDocument;
+
+            if (printDocument != null)
+            {
+                using (var fonte = new Font("Times New Roman", 14))
+                using (var brush = new SolidBrush(Color.Black))
+                {
+                    int caracteresNaPagina = 0;
+                    int linhasPorPagina = 0;
+
+                    e.Graphics.MeasureString(
+                        pedidoTexto, fonte, e.MarginBounds.Size, StringFormat.GenericTypographic,
+                        out caracteresNaPagina, out linhasPorPagina);
+
+                    e.Graphics.DrawString(
+                        pedidoTexto.Substring(0, caracteresNaPagina),
+                        fonte,
+                        brush,
+                        e.MarginBounds);
+
+                    pedidoTexto = pedidoTexto.Substring(caracteresNaPagina);
+
+                    e.HasMorePages = pedidoTexto.Length > 0;
+                }
+            }
+        }
+
+        #endregion
+
     }
 }

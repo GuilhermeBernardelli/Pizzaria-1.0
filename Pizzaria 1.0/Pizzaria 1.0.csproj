@@ -166,6 +166,7 @@
     <Content Include="Imagens\BotãoVerde.png" />
     <Content Include="Imagens\Fundo.png" />
     <Content Include="Imagens\IconePizza.ico" />
+    <Content Include="Imagens\manutenção.png" />
     <Content Include="Imagens\Pedaço.png" />
     <Content Include="Imagens\Sair.png" />
     <Content Include="Model\ModelPizzaria.Context.tt">

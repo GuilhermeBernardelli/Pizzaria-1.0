@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chkMeia = new System.Windows.Forms.CheckBox();
             this.btnSelecionar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtVlPedidoAberto = new System.Windows.Forms.Label();
@@ -45,10 +46,9 @@
             this.cmbItens = new System.Windows.Forms.ComboBox();
             this.btnCancela = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkEntrega = new System.Windows.Forms.CheckBox();
             this.lblLabel = new System.Windows.Forms.Label();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
-            this.chkMeia = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.pnlPagamento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
@@ -78,13 +78,24 @@
             this.panel1.Controls.Add(this.cmbItens);
             this.panel1.Controls.Add(this.btnCancela);
             this.panel1.Controls.Add(this.btnOK);
-            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.chkEntrega);
             this.panel1.Controls.Add(this.lblLabel);
             this.panel1.Controls.Add(this.dgvPedido);
             this.panel1.Location = new System.Drawing.Point(0, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(599, 580);
             this.panel1.TabIndex = 2;
+            // 
+            // chkMeia
+            // 
+            this.chkMeia.AutoSize = true;
+            this.chkMeia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.chkMeia.Location = new System.Drawing.Point(490, 369);
+            this.chkMeia.Name = "chkMeia";
+            this.chkMeia.Size = new System.Drawing.Size(62, 29);
+            this.chkMeia.TabIndex = 64;
+            this.chkMeia.Text = "1/2";
+            this.chkMeia.UseVisualStyleBackColor = true;
             // 
             // btnSelecionar
             // 
@@ -232,16 +243,16 @@
             this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            // checkBox1
+            // chkEntrega
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(504, 19);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(84, 21);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "Entrega";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkEntrega.AutoSize = true;
+            this.chkEntrega.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkEntrega.Location = new System.Drawing.Point(504, 19);
+            this.chkEntrega.Name = "chkEntrega";
+            this.chkEntrega.Size = new System.Drawing.Size(84, 21);
+            this.chkEntrega.TabIndex = 2;
+            this.chkEntrega.Text = "Entrega";
+            this.chkEntrega.UseVisualStyleBackColor = true;
             // 
             // lblLabel
             // 
@@ -291,17 +302,6 @@
             this.dgvPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedido_CellContentClick);
             this.dgvPedido.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvPedido_UserDeletedRow);
             // 
-            // chkMeia
-            // 
-            this.chkMeia.AutoSize = true;
-            this.chkMeia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.chkMeia.Location = new System.Drawing.Point(490, 369);
-            this.chkMeia.Name = "chkMeia";
-            this.chkMeia.Size = new System.Drawing.Size(62, 29);
-            this.chkMeia.TabIndex = 64;
-            this.chkMeia.Text = "1/2";
-            this.chkMeia.UseVisualStyleBackColor = true;
-            // 
             // RealizaPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,7 +332,7 @@
 
         private System.Windows.Forms.Label lblCopyright;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkEntrega;
         private System.Windows.Forms.Label lblLabel;
         private System.Windows.Forms.ComboBox cmbItens;
         private System.Windows.Forms.Button btnCancela;

@@ -31,8 +31,8 @@ namespace Pizzaria_1._0.View
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PDV));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.pnlPDV = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -87,11 +87,12 @@ namespace Pizzaria_1._0.View
             this.label12 = new System.Windows.Forms.Label();
             this.pnlPedidos = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblPeriodoPedido = new System.Windows.Forms.Label();
+            this.txtPedidoDia = new System.Windows.Forms.TextBox();
+            this.Calendario = new System.Windows.Forms.MonthCalendar();
             this.button2 = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
-            this.Calendario = new System.Windows.Forms.MonthCalendar();
-            this.txtPedidoDia = new System.Windows.Forms.TextBox();
-            this.lblPeriodoPedido = new System.Windows.Forms.Label();
+            this.btnGerencia = new System.Windows.Forms.Button();
             this.pnlPDV.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlProdutos.SuspendLayout();
@@ -622,23 +623,23 @@ namespace Pizzaria_1._0.View
             this.dgvProdutos.AllowUserToResizeRows = false;
             this.dgvProdutos.BackgroundColor = System.Drawing.Color.DarkGreen;
             this.dgvProdutos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProdutos.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProdutos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProdutos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvProdutos.GridColor = System.Drawing.Color.White;
             this.dgvProdutos.Location = new System.Drawing.Point(201, 230);
@@ -763,6 +764,45 @@ namespace Pizzaria_1._0.View
             this.panel4.Size = new System.Drawing.Size(1000, 673);
             this.panel4.TabIndex = 15;
             // 
+            // lblPeriodoPedido
+            // 
+            this.lblPeriodoPedido.AutoSize = true;
+            this.lblPeriodoPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPeriodoPedido.Location = new System.Drawing.Point(249, 9);
+            this.lblPeriodoPedido.Name = "lblPeriodoPedido";
+            this.lblPeriodoPedido.Size = new System.Drawing.Size(106, 29);
+            this.lblPeriodoPedido.TabIndex = 21;
+            this.lblPeriodoPedido.Text = "Periodo";
+            // 
+            // txtPedidoDia
+            // 
+            this.txtPedidoDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPedidoDia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            this.txtPedidoDia.Location = new System.Drawing.Point(247, 41);
+            this.txtPedidoDia.Multiline = true;
+            this.txtPedidoDia.Name = "txtPedidoDia";
+            this.txtPedidoDia.Size = new System.Drawing.Size(530, 627);
+            this.txtPedidoDia.TabIndex = 15;
+            // 
+            // Calendario
+            // 
+            this.Calendario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(32)))));
+            this.Calendario.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
+            this.Calendario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Calendario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            this.Calendario.Location = new System.Drawing.Point(9, 9);
+            this.Calendario.Margin = new System.Windows.Forms.Padding(0);
+            this.Calendario.MaxDate = new System.DateTime(2028, 1, 1, 0, 0, 0, 0);
+            this.Calendario.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
+            this.Calendario.Name = "Calendario";
+            this.Calendario.ShowToday = false;
+            this.Calendario.ShowTodayCircle = false;
+            this.Calendario.TabIndex = 10;
+            this.Calendario.TitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            this.Calendario.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
+            this.Calendario.TrailingForeColor = System.Drawing.Color.White;
+            this.Calendario.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.Calendario_DateSelected);
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
@@ -794,44 +834,22 @@ namespace Pizzaria_1._0.View
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // Calendario
+            // btnGerencia
             // 
-            this.Calendario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(32)))));
-            this.Calendario.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
-            this.Calendario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Calendario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.Calendario.Location = new System.Drawing.Point(9, 9);
-            this.Calendario.Margin = new System.Windows.Forms.Padding(0);
-            this.Calendario.MaxDate = new System.DateTime(2028, 1, 1, 0, 0, 0, 0);
-            this.Calendario.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
-            this.Calendario.Name = "Calendario";
-            this.Calendario.ShowToday = false;
-            this.Calendario.ShowTodayCircle = false;
-            this.Calendario.TabIndex = 10;
-            this.Calendario.TitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.Calendario.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.Calendario.TrailingForeColor = System.Drawing.Color.White;
-            this.Calendario.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.Calendario_DateSelected);
-            // 
-            // txtPedidoDia
-            // 
-            this.txtPedidoDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPedidoDia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(0)))));
-            this.txtPedidoDia.Location = new System.Drawing.Point(247, 41);
-            this.txtPedidoDia.Multiline = true;
-            this.txtPedidoDia.Name = "txtPedidoDia";
-            this.txtPedidoDia.Size = new System.Drawing.Size(530, 627);
-            this.txtPedidoDia.TabIndex = 15;
-            // 
-            // lblPeriodoPedido
-            // 
-            this.lblPeriodoPedido.AutoSize = true;
-            this.lblPeriodoPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPeriodoPedido.Location = new System.Drawing.Point(249, 9);
-            this.lblPeriodoPedido.Name = "lblPeriodoPedido";
-            this.lblPeriodoPedido.Size = new System.Drawing.Size(106, 29);
-            this.lblPeriodoPedido.TabIndex = 21;
-            this.lblPeriodoPedido.Text = "Periodo";
+            this.btnGerencia.BackColor = System.Drawing.Color.Transparent;
+            this.btnGerencia.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGerencia.BackgroundImage")));
+            this.btnGerencia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGerencia.Enabled = false;
+            this.btnGerencia.FlatAppearance.BorderSize = 0;
+            this.btnGerencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGerencia.ForeColor = System.Drawing.Color.Transparent;
+            this.btnGerencia.Location = new System.Drawing.Point(934, 2);
+            this.btnGerencia.Margin = new System.Windows.Forms.Padding(0);
+            this.btnGerencia.Name = "btnGerencia";
+            this.btnGerencia.Size = new System.Drawing.Size(40, 40);
+            this.btnGerencia.TabIndex = 19;
+            this.btnGerencia.UseVisualStyleBackColor = false;
+            this.btnGerencia.Click += new System.EventHandler(this.btnGerencia_Click);
             // 
             // PDV
             // 
@@ -841,6 +859,7 @@ namespace Pizzaria_1._0.View
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.Controls.Add(this.btnGerencia);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnPedidos);
             this.Controls.Add(this.btnProdutos);
@@ -932,5 +951,6 @@ namespace Pizzaria_1._0.View
         private System.Windows.Forms.MonthCalendar Calendario;
         private System.Windows.Forms.Label lblPeriodoPedido;
         private System.Windows.Forms.TextBox txtPedidoDia;
+        private System.Windows.Forms.Button btnGerencia;
     }
 }
